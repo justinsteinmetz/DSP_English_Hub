@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSP English Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0e0f13;
+    --bg2:       #13151b;
+    --bg3:       #1a1d26;
+    --surface:   #1f2230;
+    --border:    rgba(255,255,255,0.07);
+    --border-hi: rgba(255,255,255,0.14);
+    --text:      #e8e6e0;
+    --muted:     #6b6e7a;
+    --accent:    #c8a419;        /* DSP amber/gold — matched to CTA */
+    --accent2:   #3d6b9e;        /* DSP slate blue */
+    --dsp-red:   #e63329;        /* DSP Gymnasium red */
+    --accent-dim: rgba(200,164,25,0.12);
+    --green:     #4a8c6a;
+    --tag-bg:    rgba(61,107,158,0.18);
+
+    --serif:  'DM Serif Display', Georgia, serif;
+    --mono:   'DM Mono', monospace;
+    --sans:   'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    z-index: 10;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(14,15,19,0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: brightness(1);
+  }
+
+  .logo-text {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .logo-text span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 2px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  nav a:hover { color: var(--text); background: var(--surface); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: clamp(4rem, 10vw, 7rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dsp-red);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--dsp-red);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--text);
+    max-width: 14ch;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 44ch;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--accent2);
+    background: var(--tag-bg);
+    border: 1px solid rgba(61,107,158,0.3);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem) 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── YEAR GRID ── */
+  .year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    max-width: 1200px;
+    margin: 0 auto clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--border);
+  }
+
+  .year-card {
+    background: var(--bg2);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .year-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 100%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  .year-card:hover { background: var(--bg3); }
+  .year-card:hover::before { background: var(--dsp-red); }
+
+  .year-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .year-number {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .year-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+
+  .badge-active {
+    color: var(--green);
+    border-color: rgba(74,140,106,0.4);
+    background: rgba(74,140,106,0.08);
+  }
+
+  .badge-soon {
+    color: var(--muted);
+    border-color: var(--border);
+    background: transparent;
+  }
+
+  .year-title {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: -0.5rem;
+  }
+
+  /* ── GAME LIST ── */
+  .game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .game-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+
+  .game-item:hover {
+    border-color: var(--border-hi);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .game-item.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .game-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .icon-classroom { background: rgba(200,169,110,0.12); }
+  .icon-self      { background: rgba(61,107,158,0.15); }
+  .icon-culture { background: rgba(155,126,203,0.12); }
+  .icon-reading   { background: rgba(180,80,80,0.12); }
+
+  .game-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .game-name {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .game-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 1px;
+  }
+
+  .game-type {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.45rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .type-classroom {
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  .type-self {
+    color: var(--accent2);
+    background: var(--tag-bg);
+  }
+
+  .type-lesson {
+    color: #7a9e6e;
+    background: rgba(122,158,110,0.1);
+  }
+
+  .type-reading {
+    color: #b45a5a;
+    background: rgba(180,80,80,0.1);
+  }
+
+  .type-literary {
+    color: #c47a5a;
+    background: rgba(196,122,90,0.1);
+  }
+
+  .type-guide {
+    color: #7a9e7e;
+    background: rgba(122,158,126,0.1);
+  }
+
+  .icon-guide { background: rgba(122,158,126,0.12); }
+
+  .type-culture {
+    color: #9b7ecb;
+    background: rgba(155,126,203,0.1);
+  }
+
+  .type-soon {
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+  }
+
+  /* ── BOOK GUIDES SECTION ── */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    max-width: 1200px;
+    margin: 0 auto clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--border);
+  }
+
+  .book-card {
+    background: var(--bg2);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .book-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  .book-card:hover { background: var(--bg3); }
+  .book-card.active:hover::before { background: var(--accent); }
+
+  .book-cover-placeholder {
+    width: 48px;
+    height: 64px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .book-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  .book-author {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .book-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .book-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+
+  .book-link:hover { gap: 0.7rem; }
+  .book-link.disabled { color: var(--muted); pointer-events: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: clamp(2rem, 6vw, 4rem) auto 0;
+    padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-left strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .footer-right {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-align: right;
+  }
+
+  /* ── COMING SOON OVERLAY ── */
+  .year-card.coming-soon .year-number,
+  .year-card.coming-soon .year-title {
+    opacity: 0.4;
+  }
+
+  .coming-soon-msg {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px dashed var(--border);
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  /* ── KEY ── */
+  .key-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .key-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-right: 0.25rem;
+  }
+
+  .key-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--surface); border-radius: 3px; }
+
+  @media (max-width: 600px) {
+    nav { display: none; }
+    .year-grid, .book-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo_der_Deutschen_Schule_Prag.svg" alt="Deutsche Schule Prag">
+    </div>
+    <div class="logo-text">
+      English Hub
+      <span>Deutsche Schule Prag</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#grades">Grades 5–12</a>
+    <a href="#books">Book Guides</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Deutsche Schule Prag · English Department</div>
+  <h1>Games, guides &amp; <em>practice</em> for every level.</h1>
+  <p class="hero-desc">
+    Interactive grammar games, reading guides, and discussion lessons for DSP students in Grades 5–12.
+    Use them to review, prepare for tests, or go deeper on what you're studying in class.
+  </p>
+  <div class="hero-tags">
+    <span class="tag">Grades 5–12</span>
+    <span class="tag">Self-study</span>
+    <span class="tag">Classroom games</span>
+    <span class="tag">Reading guides</span>
+    <span class="tag">Grammar practice</span>
+  </div>
+</section>
+
+<!-- KEY -->
+<div class="key-bar">
+  <span class="key-label">Key —</span>
+  <span class="key-item">
+    <span class="game-type type-classroom">Classroom</span>
+    Teacher-led game
+  </span>
+  <span class="key-item">
+    <span class="game-type type-self">Self-study</span>
+    Use independently
+  </span>
+  <span class="key-item">
+    <span class="game-type type-literary">Literary</span>
+    Thinking environment
+  </span>
+  <span class="key-item">
+    <span class="game-type type-reading">Reading</span>
+    Book guide
+  </span>
+  <span class="key-item">
+    <span class="game-type type-guide">Study guide</span>
+    Lesson resource
+  </span>
+  <span class="key-item">
+    <span class="game-type type-culture">Culture</span>
+    Society &amp; identity
+  </span>
+  <span class="key-item">
+    <span class="game-type type-lesson">Lesson</span>
+    Structured worksheet
+  </span>
+  <span class="key-item">
+    In development
+  </span>
+</div>
+
+<!-- GRADES 5–6 -->
+<div class="section-label">Grades 5 &amp; 6</div>
+<div class="year-grid" id="grades">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">5–6</div>
+        <div class="year-title">Grammar &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/MIME_IT/" target="_blank" class="game-item">
+        <div class="game-icon icon-classroom">🎭</div>
+        <div class="game-info">
+          <div class="game-name">MIME IT!</div>
+          <div class="game-meta">Adverbs of manner</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/HowMuchHowMany/" target="_blank" class="game-item">
+        <div class="game-icon icon-self">📊</div>
+        <div class="game-info">
+          <div class="game-name">How Much? How Many?</div>
+          <div class="game-meta">Quantifiers · 24 questions</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/comparative-superlative-adverbs/" target="_blank" class="game-item">
+        <div class="game-icon icon-self">⚡</div>
+        <div class="game-info">
+          <div class="game-name">Faster · Better · Best</div>
+          <div class="game-meta">Comparative &amp; superlative adverbs</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">5–6</div>
+        <div class="year-title">Reading</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/Charlotte-s-Web-overview/" target="_blank" class="game-item">
+        <div class="game-icon icon-reading">🐷</div>
+        <div class="game-info">
+          <div class="game-name">Charlotte's Web</div>
+          <div class="game-meta">E. B. White · Full interactive lesson</div>
+        </div>
+        <span class="game-type type-reading">Reading</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- GRADES 7–8 -->
+<div class="section-label">Grades 7 &amp; 8</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">7–8</div>
+        <div class="year-title">Grammar &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/grammarblitz/" target="_blank" class="game-item">
+        <div class="game-icon icon-self">⚡</div>
+        <div class="game-info">
+          <div class="game-name">GrammarBlitz</div>
+          <div class="game-meta">Modals + present perfect vs past simple</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/grammarblitz/grammar-blitz-multiplayer.html" target="_blank" class="game-item">
+        <div class="game-icon icon-classroom">⚔️</div>
+        <div class="game-info">
+          <div class="game-name">GrammarBlitz — Multiplayer</div>
+          <div class="game-meta">Live class competition</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/presentperfectlifexp/" target="_blank" class="game-item">
+        <div class="game-icon icon-classroom">🎮</div>
+        <div class="game-info">
+          <div class="game-name">LIFE XP</div>
+          <div class="game-meta">Present perfect · Live speaking game · Ably multiplayer</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/passivewithmodalverbs/" target="_blank" class="game-item">
+        <div class="game-icon icon-self">🌲</div>
+        <div class="game-info">
+          <div class="game-name">Passive with Modal Verbs</div>
+          <div class="game-meta">must · should · can · may · will · B1</div>
+        </div>
+        <span class="game-type type-lesson">Lesson</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">7–8</div>
+        <div class="year-title">Reading</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/Because_of_Winn-Dixie/" target="_blank" class="game-item">
+        <div class="game-icon icon-reading">🐶</div>
+        <div class="game-info">
+          <div class="game-name">Because of Winn-Dixie</div>
+          <div class="game-meta">Kate DiCamillo · Literary thinking environment · 6 zones</div>
+        </div>
+        <span class="game-type type-literary">Literary</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- GRADES 9–10 -->
+<div class="section-label">Grades 9 &amp; 10</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">9–10</div>
+        <div class="year-title">Grammar, Culture &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/AustralianCulture/" target="_blank" class="game-item">
+        <div class="game-icon icon-culture">🦘</div>
+        <div class="game-info">
+          <div class="game-name">Fair Go — Australian Culture</div>
+          <div class="game-meta">Communication, society &amp; identity · 6 scenarios</div>
+        </div>
+        <span class="game-type type-culture">Culture</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/HumanRights/" target="_blank" class="game-item">
+        <div class="game-icon icon-culture">⚖️</div>
+        <div class="game-info">
+          <div class="game-name">What Is a Right?</div>
+          <div class="game-meta">Human rights · Speaking &amp; discussion · 20 min</div>
+        </div>
+        <span class="game-type type-culture">Culture</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/future_tenses_party_chat/" target="_blank" class="game-item">
+        <div class="game-icon icon-self">💬</div>
+        <div class="game-info">
+          <div class="game-name">Future Tenses: The Party Chat</div>
+          <div class="game-meta">will · going to · present continuous · B1/B2</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/writinganarticle/" target="_blank" class="game-item">
+        <div class="game-icon icon-guide">📝</div>
+        <div class="game-info">
+          <div class="game-name">Writing an Article</div>
+          <div class="game-meta">ZKA exam technique · B1 · 20 min</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <div class="game-item disabled">
+        <div class="game-icon icon-self">＋</div>
+        <div class="game-info">
+          <div class="game-name">More coming</div>
+          <div class="game-meta">Check back soon</div>
+        </div>
+        <span class="game-type type-soon">Soon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-card coming-soon">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">9–10</div>
+        <div class="year-title">Reading</div>
+      </div>
+      <span class="year-badge badge-soon">Coming soon</span>
+    </div>
+    <div class="coming-soon-msg">Reading guide in development</div>
+  </div>
+
+</div>
+
+<!-- GRADE 12 -->
+<div class="section-label">Grade 12</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-number">12</div>
+        <div class="year-title">Literature &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/bards_tribunal/" target="_blank" class="game-item">
+        <div class="game-icon icon-classroom">⚔️</div>
+        <div class="game-info">
+          <div class="game-name">The Bard's Tribunal</div>
+          <div class="game-meta">Shakespeare · Sonnets · Buzzer quiz · up to 8 players</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <div class="game-item disabled">
+        <div class="game-icon icon-self">＋</div>
+        <div class="game-info">
+          <div class="game-name">More coming</div>
+          <div class="game-meta">Check back soon</div>
+        </div>
+        <span class="game-type type-soon">Soon</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOOK GUIDES -->
+<div class="section-label" id="books">Book Guides</div>
+<div class="book-grid">
+
+  <div class="book-card">
+    <div class="book-cover-placeholder">🐷</div>
+    <div>
+      <div class="book-title">Charlotte's Web</div>
+      <div class="book-author">E. B. White · 1952</div>
+    </div>
+    <p class="book-desc">A story about friendship, loss, and what it means to be truly seen. For Grade 5–6 readers.</p>
+    <a href="https://justinsteinmetz.github.io/Charlotte-s-Web-overview/" target="_blank" class="book-link">Open guide →</a>
+  </div>
+
+  <div class="book-card active">
+    <div class="book-cover-placeholder">🐶</div>
+    <div>
+      <div class="book-title">Because of Winn-Dixie</div>
+      <div class="book-author">Kate DiCamillo · 2000</div>
+    </div>
+    <p class="book-desc">Six zones of thinking — belonging, loneliness, what we carry, what stays. Non-linear. No right answers.</p>
+    <a href="https://justinsteinmetz.github.io/Because_of_Winn-Dixie/" target="_blank" class="book-link">Open environment →</a>
+  </div>
+
+  <div class="book-card coming-soon">
+    <div class="book-cover-placeholder">＋</div>
+    <div>
+      <div class="book-title">More to come</div>
+      <div class="book-author">Grades 9–10</div>
+    </div>
+    <p class="book-desc">Reading guides for upper-school texts will be added throughout the year.</p>
+    <a href="#" class="book-link disabled">Coming soon →</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo_der_Deutschen_Schule_Prag.svg" alt="DSP" style="height:32px; width:auto; vertical-align:middle; margin-right:0.75rem; opacity:0.7;">
+    <strong>Deutsche Schule Prag</strong> · Německá škola v Praze
+  </div>
+  <div class="footer-right">
+    English Department · Schwarzenberská 700/1, Praha 5
+  </div>
+</footer>
+
+</body>
+</html>
