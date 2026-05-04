@@ -207,6 +207,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    box-sizing: border-box;
   }
 
   .section-label::after {
@@ -220,6 +221,16 @@
   .year-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    max-width: 1200px;
+    margin: 0 auto clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--border);
+  }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1px;
     background: var(--border);
     max-width: 1200px;
@@ -248,8 +259,8 @@
     transition: background 0.2s;
   }
 
-  .year-card:hover { background: var(--bg2); }
-  .year-card:hover::before { background: var(--accent); }
+  .year-card:not(.coming-soon):hover { background: var(--bg2); }
+  .year-card:not(.coming-soon):hover::before { background: var(--accent); }
 
   .year-card-header {
     display: flex;
@@ -422,16 +433,6 @@
   }
 
   /* ── BOOK GUIDES SECTION ── */
-  .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    max-width: 1200px;
-    margin: 0 auto clamp(1rem, 3vw, 2rem);
-    border: 1px solid var(--border);
-  }
-
   .book-card {
     background: var(--surface);
     padding: 1.75rem 2rem;
@@ -452,8 +453,8 @@
     transition: background 0.2s;
   }
 
-  .book-card:hover { background: var(--bg3); }
-  .book-card.active:hover::before { background: var(--accent); }
+  .book-card:not(.coming-soon):hover { background: var(--bg3); }
+  .book-card:not(.coming-soon):hover::before { background: var(--accent); }
 
   .book-cover-placeholder {
     width: 48px;
@@ -560,7 +561,7 @@
 
   /* ── KEY ── */
   .key-bar {
-    background: var(--surface) !important;
+    background: var(--surface);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(1rem, 2vw, 1.5rem);
@@ -611,7 +612,7 @@
   }
 
   @media (max-width: 600px) {
-    nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(14,15,19,0.97); border-bottom: 1px solid var(--border-hi); padding: 0.5rem; z-index: 20; }
+    nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(245,244,240,0.97); border-bottom: 1px solid var(--border-hi); padding: 0.5rem; z-index: 20; }
     nav.open { display: flex; }
     .nav-toggle { display: block; }
     .year-grid, .book-grid { grid-template-columns: 1fr; }
@@ -694,8 +695,8 @@
 </div>
 
 <!-- GRADES 5–6 -->
-<div class="section-label">Grades 5 &amp; 6</div>
-<div class="year-grid" id="grades">
+<div class="section-label" id="grades">Grades 5 &amp; 6</div>
+<div class="year-grid">
 
   <div class="year-card">
     <div class="year-card-header">
@@ -804,7 +805,7 @@
       <span class="year-badge badge-active">Live</span>
     </div>
     <div class="game-list">
-      <a href="https://justinsteinmetz.github.io/Because_of_Winn-Dixie/" target="_blank" rel="noopener noreferrer" class="game-item">
+      <a href="https://justinsteinmetz.github.io/BoWD/" target="_blank" rel="noopener noreferrer" class="game-item">
         <div class="game-icon icon-reading" aria-hidden="true">🐶</div>
         <div class="game-info">
           <div class="game-name">Because of Winn-Dixie</div>
@@ -949,7 +950,7 @@
       <div class="book-author">Kate DiCamillo · 2000</div>
     </div>
     <p class="book-desc">Six zones of thinking — belonging, loneliness, what we carry, what stays. Non-linear. No right answers.</p>
-    <a href="https://justinsteinmetz.github.io/Because_of_Winn-Dixie/" target="_blank" rel="noopener noreferrer" class="book-link">Open environment →</a>
+    <a href="https://justinsteinmetz.github.io/BoWD/" target="_blank" rel="noopener noreferrer" class="book-link">Open environment →</a>
   </div>
 
   <div class="book-card coming-soon">
