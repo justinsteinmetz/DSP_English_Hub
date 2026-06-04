@@ -1,5 +1,7 @@
 # DSP English Hub
 
+https://justinsteinmetz.github.io/DSP_English_Hub/
+
 **The central resource hub for the English department at Deutsche Schule Prag.**
 
 A single-page directory of all classroom tools, self-study resources, reading guides, identity instruments, skills guides, and MUN materials — organised by grade band and linked directly to deployed GitHub Pages applications.
