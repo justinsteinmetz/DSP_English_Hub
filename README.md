@@ -1,10 +1,8 @@
-https://justinsteinmetz.github.io/DSP_English_Hub/
-
 # DSP English Hub
 
 **The central resource hub for the English department at Deutsche Schule Prag.**
 
-A single-page directory of all classroom tools, self-study resources, reading guides, identity instruments, and MUN materials — organised by grade band and linked directly to deployed GitHub Pages applications.
+A single-page directory of all classroom tools, self-study resources, reading guides, identity instruments, skills guides, and MUN materials — organised by grade band and linked directly to deployed GitHub Pages applications.
 
 ---
 
@@ -12,14 +10,15 @@ A single-page directory of all classroom tools, self-study resources, reading gu
 
 The hub is a single HTML file (`index.html`) deployed to GitHub Pages. It contains no frameworks, no build step, and no server dependencies. All linked resources are separately deployed GitHub Pages repositories.
 
-The hub is organised into five sections:
+The hub is organised into six sections:
 
 | Section | Grade band |
 |---|---|
 | Grades 5 & 6 | Grammar & Language · Reading |
 | Grades 7 & 8 | Grammar & Language · Reading |
-| Grades 9 & 10 | Grammar, Culture & Language · Reading |
+| Grades 9 & 10 | Grammar, Culture & Language |
 | Grades 11 & 12 | Literature, Language & Abitur Themenfelder |
+| Skills Guides | All grades |
 | Model United Nations | Simulations & Resources |
 | Book Guides | Charlotte's Web · Because of Winn-Dixie |
 
@@ -31,18 +30,18 @@ The hub is organised into five sections:
 
 **Grammar & Language**
 
-| Resource | Type | What it does |
-|---|---|---|
-| MIME IT! | Classroom | Adverbs of manner · Ably multiplayer sync between board and phones |
-| How Much? How Many? | Self-study | Quantifiers · 24 questions |
-| Faster · Better · Best | Self-study | Comparative & superlative adverbs |
-| Question Market | Self-study | Wh-questions · Band 1 Unit 3 |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| MIME IT! | /MIME_IT/ | Classroom | Adverbs of manner · Ably multiplayer sync |
+| How Much? How Many? | /HowMuchHowMany/ | Self-study | Quantifiers · 24 questions |
+| Faster · Better · Best | /comparative-superlative-adverbs/ | Self-study | Comparative & superlative adverbs |
+| Question Market | /QuestionMarket/ | Self-study | Wh-questions · Band 1 Unit 3 |
 
 **Reading**
 
-| Resource | Type | What it does |
-|---|---|---|
-| Charlotte's Web | Reading | E. B. White · Full interactive lesson |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| Charlotte's Web | /Charlotte-s-Web-overview/ | Reading | E. B. White · Full interactive lesson |
 
 ---
 
@@ -50,24 +49,25 @@ The hub is organised into five sections:
 
 **Grammar & Language**
 
-| Resource | Type | What it does |
-|---|---|---|
-| GrammarBlitz | Self-study | Modals + present perfect vs past simple |
-| LIFE XP | Classroom | Present perfect · live speaking game · Ably multiplayer |
-| Passive with Modal Verbs | Lesson | must · should · can · may · will · B1 |
-| Reported Speech | Lesson | 20-minute lesson · tense shift · B1 |
-| Reported Questions | Self-study | Reference + exercises · wh- & yes/no · B1 |
-| Deposition Room | Classroom | Reported questions · witness scenario · suspicion meter |
-| Reflexive & Reciprocal Pronouns | Self-study | myself · each other · when one choice changes meaning |
-| Passive Voice — Full Revision | Self-study | 9 tenses · special forms · uses · Grade 8 |
-| The Blame Game | Classroom | PP · personal · modal passive · write then identify |
-| Plan Builder | Classroom | going to · adverbs of manner · AI feedback · productive verb entry |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| GrammarBlitz | /GRAMMARBLITZ/ | Self-study | Modals + present perfect vs past simple |
+| LIFE XP | /presentperfectlifexp/ | Classroom | Present perfect · live speaking game · Ably multiplayer |
+| Passive with Modal Verbs | /passivewithmodalverbs/ | Lesson | must · should · can · may · will · B1 |
+| Reported Speech | /ReportedSpeech/ | Lesson | 20-minute lesson · tense shift · B1 |
+| Reported Questions | /Reported-Questions/ | Self-study | Reference + exercises · wh- & yes/no · B1 |
+| Deposition Room | /DEPOSITION_Reported_Questions/ | Classroom | Reported questions · witness scenario · suspicion meter |
+| Reflexive & Reciprocal Pronouns | /ReflexiveReciprocalPronouns/ | Self-study | myself · each other · when one choice changes meaning |
+| Passive Voice — Full Revision | /PASSIVEREVIEW/ | Self-study | 9 tenses · special forms · uses · Grade 8 |
+| The Blame Game | /BlameGame/ | Classroom | PP · personal · modal passive · write then identify |
+| Plan Builder | /PlanBuilder/ | Classroom | going to · adverbs of manner · AI feedback · Band 2 |
+| Done Did It | /done_did_it/ | Classroom | Present perfect vs past simple · Firebase + Ably multiplayer · host/student files |
 
 **Reading**
 
-| Resource | Type | What it does |
-|---|---|---|
-| Because of Winn-Dixie | Literary | Kate DiCamillo · 6-zone thinking environment · non-linear |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| Because of Winn-Dixie | /Because_of_Winn-Dixie/ | Literary | Kate DiCamillo · 6-zone thinking environment · non-linear |
 
 ---
 
@@ -75,16 +75,17 @@ The hub is organised into five sections:
 
 **Grammar, Culture & Language**
 
-| Resource | Type | What it does |
-|---|---|---|
-| How to Read a Photograph | Classroom | Visual literacy · 5-step framework · NYT method |
-| Fair Go — Australian Culture | Culture | Communication, society & identity · 6 scenarios |
-| Human Rights — Not Optional | Culture | Behaviour-modification lesson · 60–90 min |
-| Future Tenses: The Party Chat | Self-study | will · going to · present continuous |
-| Don't Write an Essay | Study guide | Article writing · exam technique · B1–B2 |
-| How to Debate — Part 1 | Lesson | Build & Fail · Argument structure |
-| How to Debate — Part 2 | Lesson | Break & Rebuild · Rebuttal & counter-argument |
-| Adverbial Clauses | Self-study | Subordination · types, conjunctions & clause movement · B2 |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| How to Read a Photograph | /How_to_Read_a_Photograph/ | Classroom | Visual literacy · 5-step framework · NYT method |
+| Fair Go — Australian Culture | /AustralianCulture/ | Culture | Communication, society & identity · 6 scenarios |
+| Human Rights — Not Optional | /human_rights/ | Culture | Behaviour-modification lesson · 60–90 min |
+| Future Tenses: The Party Chat | /future_tenses_party_chat/ | Self-study | will · going to · present continuous |
+| Don't Write an Essay | /writinganarticle/ | Study guide | Article writing · exam technique · B1–B2 |
+| How to Debate — Part 1 | /How-to-Debate-part-one/ | Lesson | Build & Fail · argument structure |
+| How to Debate — Part 2 | /How-to-Debate-part-two/ | Lesson | Break & Rebuild · rebuttal & counter-argument |
+| Adverbial Clauses | /AdverbialClauses/ | Self-study | Subordination · types, conjunctions & movement · B2 |
+| Hoo Witch? | /hoo_witch/ | Classroom | Relative & participle clauses · five discussion modes · cards & debate · Grade 8–9 |
 
 ---
 
@@ -92,64 +93,85 @@ The hub is organised into five sections:
 
 **Literature & Language**
 
-| Resource | Type | What it does |
-|---|---|---|
-| The Sonnet's Argument | Self-study | Sonnets 18 & 130 · close reading · form, theme & rhetoric |
-| The Bard's Tribunal | Classroom | Shakespeare · Sonnets · buzzer quiz · up to 8 players |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| The Sonnet's Argument | /shakespeare-sonnets-yr12/ | Self-study | Sonnets 18 & 130 · close reading · form, theme & rhetoric |
+| The Bard's Tribunal | /bards_tribunal/ | Classroom | Shakespeare · Sonnets · buzzer quiz · up to 8 players |
 
 **Abitur Themenfelder 2027–29**
 
-All instruments below are aligned to the KMK Themenfelder for English Abitur cohorts 2027, 2028, and 2029. Resources are tagged by Themenfeld.
+All instruments below are aligned to the KMK Themenfelder for English Abitur cohorts 2027, 2028, and 2029.
 
 *The Individual & Society*
 
-| Resource | What it does |
-|---|---|
-| Who Are You, Really | Identity instrument · behaviour, origin & conformity · AI portrait + unanswered question |
-| The Danger Room | Socratic chamber · commit to a position · receive pressure · hold or move · AI synthesis |
-| Default Settings | Inherited norms & snap judgements · input/output/loop · AI portrait |
-| BIRTHMARKS | Archival identity instrument · race, culture & inherited identity · 6 sections · AI archivist's reading |
-| SELF v SELFIE | Feed vs Draft · curated identity · the gap between performance and person · AI portrait |
-| RPG4LIFE | Character build · assigned vs chosen roles · stats, buffs & debuffs · AI build analysis |
-| Social Contract | Civic simulation · assigned profiles · political imagination · two-mode gap reading |
-| When Yes Means No | Performed willingness · the cost of refusal · consent & identity · AI structural reading |
+| Resource | URL | What it does |
+|---|---|---|
+| The Individual & Society — Hub | /IDHUB/ | Landing page for the full strand · clusters, sequence & essay questions |
+| Who Are You, Really | /WhoAreYouReally/ | Identity instrument · behaviour, origin & conformity · AI portrait |
+| The Danger Room | /TheDangerRoom/ | Socratic chamber · commit to a position · pressure · AI synthesis |
+| Default Settings | /DefaultSettings/ | Inherited norms & snap judgements · AI portrait |
+| BIRTHMARKS | /BIRTHMARKS/ | Archival instrument · race, culture & inherited identity · AI archivist |
+| SELF v SELFIE | /SELFvSELFIE/ | Feed vs draft · curated identity · the gap between performance and person |
+| RPG4LIFE | /RPG4LIFE/ | Character build · assigned vs chosen roles · AI build analysis |
+| Social Contract | /SOCIALCONTRACT/ | Civic simulation · assigned profiles · political imagination |
+| When Yes Means No | /When_Yes_Means_No/ | Performed willingness · consent & identity · AI structural reading |
+| Where Do You Stand? | /WhereDoYouStand26/ | Political values instrument · 22 situations · six tensions · ~10 min · no data stored |
+| Orientation 2089 | /Orientation-2089/ | Values instrument · 27 post-singularity situations · six civilisational tensions · leads to ARIA |
+| ARIA | /ARIA/ | Civilisation encounter · synthetic citizen ARIA-7 · 8 decisions · 2071–2089 · run after Orientation 2089 |
+| Input / Output | /Input-Output/ | Data, consent & behavioural systems · experience + debrief |
+| Surveillance | /SURVEILLANCE/ | Data, consent & chilling effects · discussion & analysis |
 
-*Science & Technology*
+*Politics, Culture & Society — USA*
 
-| Resource | What it does |
-|---|---|
-| Input / Output | Data, consent & behavioural systems · text-drift experience + diff debrief |
-| Surveillance | Data, consent & chilling effects · discussion & analysis tool |
+| Resource | URL | What it does |
+|---|---|---|
+| American Exceptionablism | /AE/ | Full unit landing page · six plays · nine encounter lessons · three analytical tools |
+| Document Sorter | /AE-sort/ | 18 primary source excerpts · drag-and-drop grouping · reveal and revise |
+| Stress-Tester | /AE-stress/ | 5A/5B co-optation vs transformation · evidence · slider · class distribution |
+| Testimony Sorter | /AE-testimony/ | 14 passages · who is speaking · what do they want · reveal |
 
-*Politics, Culture & Society — USA* · coming  
 *Politics, Culture & Society — UK* · coming
+
+---
+
+### Skills Guides — All Grades
+
+| Resource | URL | What it does |
+|---|---|---|
+| How to Write Well | /how_to_write_well/ | Five stages of mastery · Grades 1–12 · framework, checklist & rubric |
+| How to Give a Presentation | /how_to_give_a_presentation/ | Five stages of mastery · Grades 1–12 · framework, timer, checklist & rubric |
+| How to Read Critically | /how_to_read_critically/ | Five stages of mastery · Grades 5–12 · framework, strategies & rubric |
+| How to Speak Proficiently | /how_to_speak_proficiently/ | Five stages of mastery · Grades 1–12 · framework, phonemes, prompts & rubric |
+| How to Ask Better Questions | /how_to_ask_better_questions/ | Five stages of mastery · Grades 1–12 · framework, builder, checklist & rubric |
+| How to Evaluate Information | /how_to_evaluate_information/ | Five stages of mastery · Grades 1–12 · claim evaluator, source profiler & rubric |
+| How to Debate · Part One | /How-to-Debate-part-one/ | Build & Fail · PEEL, rebuttal, Ethos/Pathos/Logos, POI · Grades 8–10 |
+| How to Debate · Part Two | /How-to-Debate-part-two/ | Break & Rebuild · frame-breaking, premise attack · Grades 8–10 |
 
 ---
 
 ### Model United Nations
 
-| Resource | Type | What it does |
-|---|---|---|
-| UNGA — When the Rule-Maker Breaks the Rules | MUN | UN simulation · sovereignty, intervention, legitimacy |
-| Position Papers | Coming | In development |
+| Resource | URL | Type | What it does |
+|---|---|---|---|
+| DSP MUN — Student Guide | /DSP-MUN/ | MUN | Three-unit course · history, research & simulation · standalone site |
+
+Position paper guides in development.
 
 ---
 
 ### Book Guides
 
-| Title | Author | Grade | Status |
-|---|---|---|---|
-| Charlotte's Web | E. B. White | 5–6 | Live |
-| Because of Winn-Dixie | Kate DiCamillo | 7–8 | Live |
-| Grades 9–10 texts | TBD | 9–10 | Coming |
+| Title | Author | Grade | URL | Status |
+|---|---|---|---|---|
+| Charlotte's Web | E. B. White | 5–6 | /Charlotte-s-Web-overview/ | Live |
+| Because of Winn-Dixie | Kate DiCamillo | 7–8 | /Because_of_Winn-Dixie/ | Live |
+| Grades 9–10 texts | TBD | 9–10 | — | Coming |
 
 ---
 
 ## AI-powered resources
 
 Several resources use the Anthropic API via a Cloudflare Worker proxy. The API key is stored as a server-side secret and never exposed in the browser. All AI calls are proxied through `https://anthropic-proxy.justin-steinmetz.workers.dev`.
-
-AI-powered resources:
 
 | Resource | API use |
 |---|---|
@@ -163,7 +185,7 @@ AI-powered resources:
 | When Yes Means No | Gap reading + discussion questions — 1 call per session |
 | Plan Builder | Sentence assessment — 1 call per round (up to 8 per session) |
 
-Resources without API: MIME IT!, GrammarBlitz, LIFE XP, all lesson/study tools, both reading environments, The Blame Game, Input/Output, Surveillance, The Bard's Tribunal.
+Resources without API: MIME IT!, GrammarBlitz, LIFE XP, all lesson/study tools, all skills guides, both reading environments, The Blame Game, Input/Output, Surveillance, The Bard's Tribunal, all AE instruments.
 
 ---
 
@@ -173,6 +195,16 @@ Two resources use Ably for real-time sync:
 
 - **MIME IT!** — board display syncs with student phones
 - **LIFE XP** — live multiplayer present perfect speaking game
+
+---
+
+## Known issues
+
+> **Done Did It** has a separate teacher-facing host file at `justinsteinmetz.github.io/done_did_it/done-did-it-host.html`. Students open the main URL; teacher uses the host URL to create a room and generate the PIN.
+
+## Known issues
+
+- **RPG4LIFE** — the live hub links to `/RPGFLIFE-/` (typo). The correct URL is `/RPG4LIFE/`. Fix the href in `index.html` and redeploy.
 
 ---
 
@@ -218,11 +250,26 @@ Edit the tool's own repository. The hub links are live — no hub update needed 
 
 **Default Settings** and **BIRTHMARKS** also address sensitive identity territory (gender norms, race, family history). Teacher framing is required before deployment.
 
+**American Exceptionablism** and associated instruments deal with race, colonialism, structural inequality, and contemporary political events. The Encounter lessons document includes a full teacher restraint appendix. Read it before deploying.
+
 ---
 
 ## Maintenance
 
 The hub file is maintained manually. When resources are deployed or URLs change, update `index.html` in this repository and push.
 
-The `hub-index.html` working file is maintained separately in the development environment and copied to `index.html` for deployment. Always deploy as `index.html`.
+Always deploy as `index.html`.
 
+### Pending before September 2026
+
+- [x] Done Did It deployed at `/done_did_it/` ✓
+- [x] Hoo Witch? deployed at `/hoo_witch/` ✓
+- [x] Where Do You Stand? deployed at `/WhereDoYouStand26/` ✓
+- [x] Orientation 2089 deployed at `/Orientation-2089/` ✓
+- [x] ARIA deployed at `/ARIA/` ✓
+- [ ] Deploy AE Document Sorter to `/AE-sort/`
+- [ ] Deploy AE Stress-Tester to `/AE-stress/`
+- [ ] Deploy AE Testimony Sorter to `/AE-testimony/`
+- [ ] Fix RPG4LIFE URL typo in hub index (`/RPGFLIFE-/` → `/RPG4LIFE/`)
+- [ ] Push updated `index.html` with AE card and IDHUB card live
+- [ ] UK Themenfeld strand — in development
