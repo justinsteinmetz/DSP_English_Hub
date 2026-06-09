@@ -1,4 +1,4 @@
-  :root {
+:root {
     --bg:          #f5f4f0;
     --bg2:         #edecea;
     --bg3:         #e6e4de;
@@ -653,6 +653,86 @@
     .year-grid, .book-grid { grid-template-columns: 1fr; }
     .key-bar { gap: 0.6rem; }
     h1 { max-width: 100%; }
+  }
+
+  /* ── SEARCH ── */
+  .search-bar-wrap {
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-hi);
+    border-radius: 8px;
+    padding: 0 0.85rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .search-bar:focus-within {
+    border-color: var(--accent2);
+    box-shadow: 0 0 0 3px rgba(26,79,140,0.1);
+  }
+
+  .search-icon {
+    font-size: 1.15rem;
+    color: var(--muted);
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  #hubSearch {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--text);
+    padding: 0.7rem 0;
+    outline: none;
+  }
+
+  #hubSearch::placeholder { color: var(--muted); }
+
+  .search-clear {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 0.25rem 0.1rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .search-clear:hover { color: var(--text); }
+
+  .search-empty {
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    padding: 2.5rem 1rem;
+  }
+
+  /* Hide section labels and year-grids when all their cards are hidden */
+  .section-label.search-hidden,
+  .year-grid.search-hidden,
+  .book-grid.search-hidden {
+    display: none;
+  }
+
+  .game-item.search-hidden {
+    display: none;
+  }
+
+  .year-card.search-hidden,
+  .book-card.search-hidden {
+    display: none;
   }
 
   /* ── REDUCED MOTION ── */
