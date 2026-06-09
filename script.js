@@ -129,4 +129,3 @@ window.addEventListener('resize', function() {
     }
   });
 })();
-</script>
