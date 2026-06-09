@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSP English Hub</title>
+<meta name="description" content="Interactive grammar games, reading guides, and discussion lessons for Deutsche Schule Prag students in Grades 5–12.">
+<meta property="og:title" content="DSP English Hub">
+<meta property="og:description" content="Interactive grammar games, reading guides, and discussion lessons for DSP students in Grades 5–12.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://justinsteinmetz.github.io/DSP_English_Hub/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="dsp-logo.svg" type="image/svg+xml">
+<link rel="icon" href="dsp-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <img src="dsp-logo.svg" alt="Deutsche Schule Prag">
+    </div>
+    <div class="logo-text">
+      English Hub
+      <span>Deutsche Schule Prag</span>
+    </div>
+  </a>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+  <nav id="mainNav">
+    <a href="#grades">Gr. 5–6</a>
+    <a href="#grades7-8">Gr. 7–8</a>
+    <a href="#grades9-10">Gr. 9–10</a>
+    <a href="#grades11-12">Gr. 11–12</a>
+    <a href="#skills-guides">Skills</a>
+    <a href="#books">Books</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<main>
+<section class="hero">
+  <div class="hero-eyebrow">Deutsche Schule Prag · English Department</div>
+  <h1>Games, guides &amp; <em>practice</em> for every level.</h1>
+  <p class="hero-desc">
+    Interactive grammar games, reading guides, and discussion lessons for DSP students in Grades 5–12.
+    Use them to review, prepare for tests, or go deeper on what you're studying in class.
+  </p>
+  <div class="hero-tags">
+    <span class="tag">Grades 5–12</span>
+    <span class="tag">Self-study</span>
+    <span class="tag">Classroom games</span>
+    <span class="tag">Reading guides</span>
+    <span class="tag">Grammar practice</span>
+  </div>
+</section>
+
+<!-- KEY -->
+<div class="key-bar">
+  <span class="key-label">Key —</span>
+  <span class="key-item"><span class="game-type type-classroom">Classroom</span> Teacher-led</span>
+  <span class="key-item"><span class="game-type type-self">Self-study</span> Independent</span>
+  <span class="key-item"><span class="game-type type-literary">Literary</span> Thinking environment</span>
+  <span class="key-item"><span class="game-type type-reading">Reading</span> Book guide</span>
+  <span class="key-item"><span class="game-type type-guide">Study guide</span> Lesson resource</span>
+  <span class="key-item"><span class="game-type type-culture">Culture</span> Society &amp; identity</span>
+  <span class="key-item"><span class="game-type type-lesson">Lesson</span> Structured worksheet</span>
+  <span class="key-item"><span class="game-type type-mun">MUN</span> Simulation</span>
+  <span class="key-item"><span class="game-type type-themenfeld">Abitur</span> Abitur preparation</span>
+  <span class="key-item"><span class="game-type type-soon">Soon</span> In development</span>
+</div>
+
+<!-- ─────────── GRADES 5–6 ─────────── -->
+<div class="section-label" id="grades">Grades 5 &amp; 6</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Grammar &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/MIME_IT/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">🎭</div>
+        <div class="game-info">
+          <div class="game-name">MIME IT!</div>
+          <div class="game-meta">Adverbs of manner · Classroom performance game</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/HowMuchHowMany/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">📊</div>
+        <div class="game-info">
+          <div class="game-name">How Much? How Many?</div>
+          <div class="game-meta">Quantifiers · Self-paced quiz</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/comparative-superlative-adverbs/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">⚡</div>
+        <div class="game-info">
+          <div class="game-name">Faster · Better · Best</div>
+          <div class="game-meta">Comparative &amp; superlative adverbs · Self-paced challenges</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/QuestionMarket/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">❓</div>
+        <div class="game-info">
+          <div class="game-name">Question Market</div>
+          <div class="game-desc">Trade, swap and build your way to the perfect question.</div>
+          <div class="game-meta">Wh-questions · Trading card game</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/done_did_it/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">⏱️</div>
+        <div class="game-info">
+          <div class="game-name">Done Did It</div>
+          <div class="game-desc">Present perfect vs past simple · live competitive quiz · host from teacher screen.</div>
+          <div class="game-meta">Present perfect · past simple · Firebase multiplayer · 10/20/40 questions</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Reading</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/Charlotte-s-Web-overview/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-reading" aria-hidden="true">🐷</div>
+        <div class="game-info">
+          <div class="game-name">Charlotte's Web</div>
+          <div class="game-meta">E. B. White · Interactive reading guide</div>
+        </div>
+        <span class="game-type type-reading">Reading</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────── GRADES 7–8 ─────────── -->
+<div class="section-label" id="grades7-8">Grades 7 &amp; 8</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Grammar &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/GRAMMARBLITZ/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">⚡</div>
+        <div class="game-info">
+          <div class="game-name">GrammarBlitz</div>
+          <div class="game-desc">Rapid-fire revision: modals and present perfect.</div>
+          <div class="game-meta">Modals · Present perfect vs past simple</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/presentperfectlifexp/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">🎮</div>
+        <div class="game-info">
+          <div class="game-name">LIFE XP</div>
+          <div class="game-desc">You earn XP by talking. The more you say, the more you level up.</div>
+          <div class="game-meta">Present perfect · Live speaking game</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/passivewithmodalverbs/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">🌲</div>
+        <div class="game-info">
+          <div class="game-name">Passive with Modal Verbs</div>
+          <div class="game-meta">Passive voice with modals · Reference &amp; practice</div>
+        </div>
+        <span class="game-type type-lesson">Lesson</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/ReportedSpeech/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">💬</div>
+        <div class="game-info">
+          <div class="game-name">Reported Speech</div>
+          <div class="game-meta">Reported speech · Tense shift · Guided practice</div>
+        </div>
+        <span class="game-type type-lesson">Lesson</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/Reported-Questions/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">❓</div>
+        <div class="game-info">
+          <div class="game-name">Reported Questions</div>
+          <div class="game-meta">Reported questions · Reference &amp; exercises</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/DEPOSITION_Reported_Questions/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">🔎</div>
+        <div class="game-info">
+          <div class="game-name">Deposition Room</div>
+          <div class="game-desc">Someone is lying. Figure out who.</div>
+          <div class="game-meta">Reported questions · Witness interrogation game</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/ReportedSpeechQuestionsBlackwood/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">🕵️</div>
+        <div class="game-info">
+          <div class="game-name">The Blackwood Interrogations</div>
+          <div class="game-desc">A murder. Six suspects. Only indirect questions allowed.</div>
+          <div class="game-meta">Indirect questions · Murder mystery</div>
+        </div>
+        <span class="game-type type-lesson">Lesson</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/ReflexiveReciprocalPronouns/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">🔄</div>
+        <div class="game-info">
+          <div class="game-name">Reflexive &amp; Reciprocal Pronouns</div>
+          <div class="game-meta">Reflexive &amp; reciprocal pronouns · Self-paced practice</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/PASSIVEREVIEW/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">🔁</div>
+        <div class="game-info">
+          <div class="game-name">Passive Voice — Full Revision</div>
+          <div class="game-meta">Passive voice · 9 tenses · Full reference</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/BlameGame/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">⚖️</div>
+        <div class="game-info">
+          <div class="game-name">The Blame Game</div>
+          <div class="game-desc">Who did it — and how do you say so without saying so?</div>
+          <div class="game-meta">Passive voice · Write then identify · Classroom game</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/PlanBuilder/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">🍳</div>
+        <div class="game-info">
+          <div class="game-name">Plan Builder</div>
+          <div class="game-desc">Draft your plan, get AI feedback, then refine it.</div>
+          <div class="game-meta">Future plans · Adverbs of manner · AI feedback</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Reading</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/BoWD/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-reading" aria-hidden="true">🐶</div>
+        <div class="game-info">
+          <div class="game-name">Because of Winn-Dixie</div>
+          <div class="game-meta">Kate DiCamillo · Literary thinking environment</div>
+        </div>
+        <span class="game-type type-literary">Literary</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────── GRADES 9–10 ─────────── -->
+<div class="section-label" id="grades9-10">Grades 9 &amp; 10</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Grammar, Culture &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/How_to_Read_a_Photograph/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-culture" aria-hidden="true">📷</div>
+        <div class="game-info">
+          <div class="game-name">How to Read a Photograph</div>
+          <div class="game-meta">Visual literacy · 5-step analysis framework</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/AustralianCulture/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-culture" aria-hidden="true">🦘</div>
+        <div class="game-info">
+          <div class="game-name">Fair Go — Australian Culture</div>
+          <div class="game-meta">Australian identity &amp; values · Scenario-based discussion</div>
+        </div>
+        <span class="game-type type-culture">Culture</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/human_rights/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-culture" aria-hidden="true">⚖️</div>
+        <div class="game-info">
+          <div class="game-name">Human Rights — Not Optional</div>
+          <div class="game-meta">Rights &amp; power · Behavioural experience</div>
+        </div>
+        <span class="game-type type-culture">Culture</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/Punishment_Philosophy/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-culture" aria-hidden="true">⚖️</div>
+        <div class="game-info">
+          <div class="game-name">Punishment & the State</div>
+          <div class="game-desc">Four theories. Six scenarios. One question: what is punishment for? Student reference tool + full and 20-min projection decks.</div>
+          <div class="game-meta">Retribution · Deterrence · Rehabilitation · Incapacitation · US vs Norway · Year 10</div>
+        </div>
+        <span class="game-type type-culture">Culture</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/future_tenses_party_chat/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">💬</div>
+        <div class="game-info">
+          <div class="game-name">Future Tenses: The Party Chat</div>
+          <div class="game-meta">will · going to · present continuous · Situational practice</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/writinganarticle/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">📝</div>
+        <div class="game-info">
+          <div class="game-name">Don't Write an Essay</div>
+          <div class="game-desc">Strong arguments. No five-paragraph structure. No safety net.</div>
+          <div class="game-meta">Argument &amp; article writing · Exam technique</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/AdverbialClauses/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">🔗</div>
+        <div class="game-info">
+          <div class="game-name">Adverbial Clauses</div>
+          <div class="game-meta">Adverbial clauses · Types, conjunctions &amp; movement</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/hoo_witch/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">🦉</div>
+        <div class="game-info">
+          <div class="game-name">Hoo Witch?</div>
+          <div class="game-desc">Relative &amp; participle clauses discussion game · five modes · cards and debate.</div>
+          <div class="game-meta">Relative clauses · participle clauses · who / which · Grade 8–9</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="year-card coming-soon">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Reading</div>
+      </div>
+      <span class="year-badge badge-soon">Coming soon</span>
+    </div>
+    <div class="coming-soon-msg">Reading guide in development</div>
+  </div>
+
+</div>
+
+<!-- ─────────── GRADES 11 & 12 ─────────── -->
+<div class="section-label" id="grades11-12">Grades 11 &amp; 12</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Literature &amp; Language</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/shakespeare-sonnets-yr12/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-self" aria-hidden="true">📜</div>
+        <div class="game-info">
+          <div class="game-name">The Sonnet's Argument</div>
+          <div class="game-meta">Sonnets 18 &amp; 130 · Close reading &amp; rhetoric</div>
+        </div>
+        <span class="game-type type-self">Self-study</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/bards_tribunal/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-classroom" aria-hidden="true">⚔️</div>
+        <div class="game-info">
+          <div class="game-name">The Bard's Tribunal</div>
+          <div class="game-desc">Put Shakespeare's characters on trial.</div>
+          <div class="game-meta">Shakespeare · Sonnets · Competitive quiz</div>
+        </div>
+        <span class="game-type type-classroom">Classroom</span>
+      </a>
+    </div>
+
+    <div class="themenfeld-divider">Abitur Preparation</div>
+
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/IDHUB/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-culture" aria-hidden="true">🔍</div>
+        <div class="game-info">
+          <div class="game-name">The Individual &amp; Society — Hub</div>
+          <div class="game-desc">Eleven instruments. One question: which of your choices are actually yours?</div>
+          <div class="game-meta">KMK Themenfeld · The Individual and Society · All tools in one place</div>
+        </div>
+        <span class="game-type type-themenfeld">Abitur</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/AE/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-culture" aria-hidden="true">🇺🇸</div>
+        <div class="game-info">
+          <div class="game-name">American Exceptionablism</div>
+          <div class="game-desc">Six moves. Every national myth runs on them. The claim before the critique.</div>
+          <div class="game-meta">KMK Themenfeld · Politics, Culture &amp; Society — USA · Abitur 2027–29</div>
+        </div>
+        <span class="game-type type-themenfeld">Abitur</span>
+      </a>
+      <div class="coming-soon-msg" aria-label="Politics, Culture &amp; Society — UK · Coming soon">Politics, Culture &amp; Society — UK · Coming soon</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────── SKILLS GUIDES (CROSS-GRADE) ─────────── -->
+<div class="section-label" id="skills-guides">Skills Guides — All Grades</div>
+<div class="year-grid">
+
+  <div class="year-card">
+    <div class="year-card-header">
+      <div>
+        <div class="year-title">Writing &amp; Communication</div>
+      </div>
+      <span class="year-badge badge-active">Live</span>
+    </div>
+    <div class="game-list">
+      <a href="https://justinsteinmetz.github.io/how_to_write_well/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">✍️</div>
+        <div class="game-info">
+          <div class="game-name">How to Write Well</div>
+          <div class="game-meta">Framework, checklist &amp; rubric</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/how_to_give_a_presentation/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">🎤</div>
+        <div class="game-info">
+          <div class="game-name">How to Give a Presentation</div>
+          <div class="game-meta">Framework, timer, checklist &amp; rubric</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/how_to_read_critically/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">📖</div>
+        <div class="game-info">
+          <div class="game-name">How to Read Critically</div>
+          <div class="game-meta">Framework, strategies &amp; rubric</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/how_to_speak_proficiently/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">💬</div>
+        <div class="game-info">
+          <div class="game-name">How to Speak Proficiently</div>
+          <div class="game-meta">Framework, phonemes, prompts &amp; rubric</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/how_to_ask_better_questions/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">❓</div>
+        <div class="game-info">
+          <div class="game-name">How to Ask Better Questions</div>
+          <div class="game-meta">Framework, builder, checklist &amp; rubric</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/how_to_evaluate_information/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">⚖️</div>
+        <div class="game-info">
+          <div class="game-name">How to Evaluate Information</div>
+          <div class="game-meta">Claim evaluator, source profiler &amp; rubric</div>
+        </div>
+        <span class="game-type type-guide">Study guide</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/How-to-Debate-part-one/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">🗣</div>
+        <div class="game-info">
+          <div class="game-name">How to Debate · Part One</div>
+          <div class="game-meta">PEEL · Rebuttal · Ethos/Pathos/Logos · POI</div>
+        </div>
+        <span class="game-type type-lesson">Lesson</span>
+      </a>
+      <a href="https://justinsteinmetz.github.io/How-to-Debate-part-two/" target="_blank" rel="noopener noreferrer" class="game-item">
+        <div class="game-icon icon-guide" aria-hidden="true">🗣</div>
+        <div class="game-info">
+          <div class="game-name">How to Debate · Part Two</div>
+          <div class="game-meta">Frame-breaking · Premise attack · Advanced rebuttal</div>
+        </div>
+        <span class="game-type type-lesson">Lesson</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────── BOOK GUIDES ─────────── -->
+<div class="section-label" id="books">Book Guides</div>
+<div class="book-grid">
+
+  <div class="book-card">
+    <div class="book-cover-placeholder">🐷</div>
+    <div>
+      <div class="book-title">Charlotte's Web</div>
+      <div class="book-author">E. B. White · 1952</div>
+    </div>
+    <p class="book-desc">Friendship, loss, and what it means to be truly seen. For Grade 5–6 readers.</p>
+    <a href="https://justinsteinmetz.github.io/Charlotte-s-Web-overview/" target="_blank" rel="noopener noreferrer" class="book-link">Open interactive lesson →</a>
+  </div>
+
+  <div class="book-card">
+    <div class="book-cover-placeholder">🐶</div>
+    <div>
+      <div class="book-title">Because of Winn-Dixie</div>
+      <div class="book-author">Kate DiCamillo · 2000</div>
+    </div>
+    <p class="book-desc">Six zones of thinking — belonging, loneliness, what we carry, what stays. Non-linear. No right answers.</p>
+    <a href="https://justinsteinmetz.github.io/BoWD/" target="_blank" rel="noopener noreferrer" class="book-link">Open environment →</a>
+  </div>
+
+  <div class="book-card coming-soon">
+    <div class="book-cover-placeholder">＋</div>
+    <div>
+      <div class="book-title">More to come</div>
+      <div class="book-author">Grades 9–10</div>
+    </div>
+    <p class="book-desc">Reading guides for upper-school texts will be added throughout the year.</p>
+    <span class="book-link disabled">Coming soon →</span>
+  </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>Deutsche Schule Prag</strong> · Německá škola v Praze
+  </div>
+  <div class="footer-right">
+    English Department · Schwarzenberská 700/1, Praha 5
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
